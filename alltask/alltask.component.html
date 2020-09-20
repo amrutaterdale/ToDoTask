@@ -1,0 +1,74 @@
+<br>
+<button  class="btn btn-info" title="click to signout" style="margin-left:500px;" (click)="signout()">Logout</button>
+
+    <!-- {{temp.email}} -->
+<!-- {{taskdata|json}} -->
+<!-- {{taskdate}} -->
+    
+<h2 style="color:orangered;margin-left:4cm;">Your task</h2>
+<table border="2">
+  <tr>
+      <th><input type="checkbox"></th>
+    <th>TaskName</th>
+    <th>Description</th>
+    <th>Status</th>
+    <!-- <th>date</th> -->
+    <th>Action</th>
+    <th>Action</th>
+  </tr>
+  <ng-container *ngFor="let t of taskdata;let i=index">
+    <tr *ngIf="temp==t.email">
+    <td style="padding:0.3cm"><input type="checkbox"  
+       (change)="changeStatus(i)" [(ngModel)]="t.chkbox"></td>
+    <td>{{t.tname}}</td>
+    <td>{{t.tdesc}}</td>
+    <td>{{t.status}}</td>
+    <!-- <td>{{t.taskdate}}</td> -->
+    <!-- <td>
+      <div *ngIf="{{t.chkbox}}==1";else elseblock><td>complete</td></div>
+      <ng-template #elseblock><td>incomplete</td></ng-template>
+    </td> -->
+    <td><button class="btn btn-primary" (click)="edit(i)">Edit</button></td>
+    <td><button  class="btn btn-danger" (click)="delete(i)">Delete</button></td>
+  </tr>
+ 
+ 
+  </ng-container>
+ 
+</table><br><br>
+
+<form>
+    taskName:<input type="text" name="taskname" value="tname" [(ngModel)]="data1.tname"><br><br>
+    Description:<input type="text" name="taskdesc" value="tdesc" [(ngModel)]="data1.tdesc"><br><br>
+    <input type="button" class="btn btn-success"  *ngIf="add" value="add task" (click)="savetask()">
+    <input type="button" class="btn btn-success" *ngIf="!add" value="Update task" (click)="modify()">
+    </form>
+
+
+
+
+
+
+
+   <!-- <div class="container">
+    <div class="row">
+      <div class="col-lg-5">
+TaskName:<input type="text" name="taskname" value="tname" [(ngModel)]="data1.tname"><br><br>
+Description:<input type="text" name="taskdesc" value="tdesc" [(ngModel)]="data1.tdesc"><br><br>
+ <input type="date"  [ngModel]="todaydate|date:'yyyy-MM-dd'" (ngModelChange)="data1.taskdate=$event"> <br>  
+<input type="button"  class="btn btn-success" value="add task" (click)="savetask()">
+</div>
+
+
+
+<div class="col-lg-5">
+TaskName:<input type="text" name="taskname" value="tname" [(ngModel)]="data2.tname"><br><br>
+Description:<input type="text" name="taskdesc" value="tdesc" [(ngModel)]="data2.tdesc"><br><br>
+<input type="button" class="btn btn-success" value="Update task" (click)="modify()">
+</div>
+</div>
+</div> --> 
+
+
+
+

@@ -1,0 +1,55 @@
+<!-- {{todaydate|date:'shortDate'}} -->
+
+<form id="t" [formGroup]="userform" (ngSubmit)="save()">
+  <h2 style="color :blue">Registeration Form</h2><br>
+  <table border="2"><br>
+   &nbsp;First Name:
+    &nbsp;<input type="text" formControlName="firstName"><br>
+    <small *ngIf="userform.get('firstName').touched && userform.get('firstName').hasError('required')">
+      first name required</small><br>
+    &nbsp;Last Name:
+    &nbsp; <input type="text" formControlName="lastName"><br>
+    <small *ngIf="userform.get('lastName').touched && userform.get('lastName').hasError('required')">
+      Last name required</small><br>
+
+      &nbsp; Gender:
+     &nbsp; <input type="radio" name="gender" value="male" formControlName="gender">male &nbsp;
+      <input type="radio" name="gender" value="female" formControlName="gender">female<br><br>
+
+      &nbsp; Email:
+     &nbsp; <input type="email" formControlName="email"><br>
+     <small *ngIf="userform.get('email').touched && userform.get('email').hasError('required')">Email required</small>
+      <br>
+     &nbsp; Date of Birth:
+     &nbsp; <input type="date" formControlName="dob"><br>
+     <small *ngIf="userform.get('dob').touched && userform.get('dob').hasError('required')">dob required</small>
+
+     <br>
+      &nbsp; Password:
+      &nbsp; <input type="password" formControlName="pwd" ><br>
+     <small *ngIf="userform.get('pwd').touched && userform.get('pwd').hasError('required')">
+      password required</small>
+     <br>
+     
+     &nbsp; Confirm Password:
+      &nbsp; <input type="password" formControlName="confirmPwd" ><br>
+     <small *ngIf="userform.get('confirmPwd').touched && userform.get('confirmPwd').hasError('required')">
+      confirm password required</small>
+
+      <!-- &nbsp; <h5 id="t">Registeration Date:</h5> //plunker[ngmodel] -->
+      &nbsp; <input type="date" formControlName="regDate" style="display: none" [ngModel]="todaydate|date:'yyyy-MM-dd'"> <br> <br>
+      <input type="number" formControlName="randomno"  style="display: none" [ngModel]="x">
+     
+      &nbsp;<input type="submit" style="margin-left:3cm" class="btn btn-success" value="submit" [disabled]="userform.invalid"><br><br>
+     
+    </table>
+</form>&nbsp;&nbsp;
+<div *ngIf="register">
+Email verification code:<input type="text" name="code" [(ngModel)]="code">
+<button class="btn btn-primary" (click)="registersave()">Enter</button>
+</div><br>
+<button style="margin-left:1cm;" class="btn btn-info"  (click)="signin()">Back to Login</button>
+
+<!-- [(ngModel)]="todaydate|date:'dd-MM-yyyy'" -->
+<!-- value="{{todaydate|date:'MM-dd-yyyy'}}" -->
+

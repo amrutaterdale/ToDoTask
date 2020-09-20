@@ -1,0 +1,27 @@
+<!-- <table>
+ <tr><th>Date</th></tr>  -->
+ <!-- < ng-cont -->
+    <!-- <tr *ngFor="let t of regdata;let i=index"> -->
+      <!-- <button (click)="type()">show</button> -->
+        <!-- <td>{{today|date:'yyyy-MM-dd'-t.regDate}}</td>
+      </tr>
+</table> -->
+<!-- <h1>{{today|date:'yyyy-MM-dd'-t[0].regDate}}</h1> -->
+<!-- <h1>{{ {{today|date:'yyyy-MM-dd'}}-{{regdata[0].regDate}} }}</h1> -->
+
+
+Registered user count={{regcount}}<br>
+Number of tasks={{totaltask}}<br>
+Number of Active users={{activeuser}}<br>
+<br>
+<button style="margin-left: 1cm;" class="btn btn-primary" (click)="type()">Show Chart</button> &nbsp;&nbsp;
+<button style="margin-left: 1cm;" class="btn btn-success" (click)="back()">Back to Detail</button>
+
+
+<div id="divchart">
+<canvas id="barChart"></canvas>
+</div>
+
+<!-- <button style="margin-left: 1cm;" class="btn btn-success" (click)="back()">Back to Detail</button> -->
+
+

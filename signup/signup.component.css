@@ -1,0 +1,43 @@
+body
+{
+      /* background-image:url(D:\finalproject\src\assets\yogurt.jpg);   */
+    /* height: 100%; */
+    margin-right: 20cm;
+    margin-top:1cm;
+    margin-left:1cm;
+    border:none;
+    border-radius:2cm;
+    
+      
+  }
+  table{
+    /* padding:1cm; */
+    border:2px solid black;
+    /* border-radius: 5cm; */
+  }
+ 
+  form{
+    margin-left: 1cm;
+  }
+  
+
+  small
+  {
+    color:red;
+  }
+  h5
+  {
+    margin-left:0.5cm;
+    color:green;
+  }
+
+  #h1{
+    color:orange;
+    text-shadow: 3px 2px red;
+    text-align:center;
+  }
+
+  #s
+  {
+    margin-left:5cm;
+  }
